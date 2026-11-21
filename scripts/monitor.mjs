@@ -7,7 +7,7 @@ import { chromium } from 'playwright-core';
 import fs from 'node:fs';
 
 const SITE = 'https://tuboleto.cultura.pe/llaqta_machupicchu';
-const FROM = process.env.WATCH_FROM || '2027-05-04;
+const FROM = process.env.WATCH_FROM || '2027-05-04';
 const TO = process.env.WATCH_TO || '2027-05-12';
 const LABEL = process.env.ALERT_LABEL || 'ticket-alert';
 const BROKEN_LABEL = 'monitor-broken';
