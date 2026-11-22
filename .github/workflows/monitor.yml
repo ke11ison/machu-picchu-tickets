@@ -4,7 +4,8 @@ on:
     # Each scheduled run checks every 15 minutes for about 3 hours
     # (see CHECK_EVERY_SECONDS and LOOP_MINUTES).
     # This cron only has to start the next run before the current one ends.
-    - cron: '*/15 * * * *'
+    - cron: '0 */4 * * *'
+      timezone: 'America/Chicago'
   workflow_dispatch:
     inputs:
       watch_from: { description: 'First date to watch (YYYY-MM-DD)', required: false }
