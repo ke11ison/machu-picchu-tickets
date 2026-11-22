@@ -1,8 +1,6 @@
 name: monitor
 on:
   schedule:
-    # Each scheduled run checks every 15 minutes for about 3 hours
-    # (see CHECK_EVERY_SECONDS and LOOP_MINUTES).
     # This cron only has to start the next run before the current one ends.
     - cron: '0 */4 * * *'
       timezone: 'America/Chicago'
