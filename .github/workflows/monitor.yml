@@ -34,7 +34,8 @@ jobs:
           ALERT_LABEL: ${{ inputs.alert_label }}
           TEST_PUSH: ${{ inputs.test_push }}
           CHECK_EVERY_SECONDS: '900'
-          LOOP_MINUTES: ${{ github.event_name == 'schedule' && '170' || inputs.loop_minutes || '0' }}
+#         LOOP_MINUTES: ${{ github.event_name == 'schedule' && '170' || inputs.loop_minutes || '0' }}
+          LOOP_MINUTES: ${{ inputs.loop_minutes || '0' }}
       - if: failure()
         uses: actions/upload-artifact@v4
         with: { name: failure, path: out/, retention-days: 7, if-no-files-found: ignore }
