@@ -1,4 +1,4 @@
-// Checks the public Machu Picchu ticket calendar for a date window and raises a
+ // Checks the public Machu Picchu ticket calendar for a date window and raises a
 // GitHub issue (plus an optional ntfy push) the first time any day opens for sale.
 //
 // It drives the page the way a visitor would: circuit -> route -> calendar, and
@@ -304,7 +304,8 @@ if (process.env.TEST_PUSH === 'true') {
 // run takes over when it ends. LOOP_MINUTES=0 means a single check.
 const LOOP_MS = Number(process.env.LOOP_MINUTES || 0) * 60_000;
 const EVERY_MS = Number(process.env.CHECK_EVERY_SECONDS || 300) * 1000;
-const BROKEN_AFTER = 3;
+// const BROKEN_AFTER = 3;
+const BROKEN_AFTER = LOOP_MS === 0 ? 1 : 3;
 const today = () => new Date().toISOString().slice(0, 10);
 
 let lastSummary = '';
